@@ -1,0 +1,15 @@
+.booking {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .booking h3 {
+    margin-bottom: 10px;
+  }
+  
+  .booking p {
+    margin-bottom: 10px;
+  }

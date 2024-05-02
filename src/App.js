@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import BookingForm from './components/bookingForm';
+import Booking from './components/booking';
+import "./App.css";
+const App = () => {
+  const [bookings, setBookings] = useState([]);
 
-function App() {
+  const handleSubmit = (booking) => {
+    setBookings([...bookings, booking]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='form'>
+      <h2>Bookings</h2>
+      <BookingForm onSubmit={handleSubmit} />
+      <h2>Booking List:</h2>
+      {bookings.map((booking) => (
+
+        <Booking key={booking.email} booking={booking} />
+      ))}
     </div>
   );
-}
+};
 
 export default App;
